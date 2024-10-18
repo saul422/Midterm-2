@@ -18,12 +18,20 @@ vector<string> customerNames;
 
 
 //Function to read from file
-void loadCustomerNames (const int string &filename)
+void loadCustomerNames (const int string& filename)
 {
     ifstream file(filename);
     string name;
     while (getline(file,name))
     {customerNames.push_back(name);
+    }
+}
+
+//function to add intitial customers
+void addInitialCustomers(DoublyLinkedList& Line){
+    for (int i = 0; i < 5; i++)
+    {
+        int randIndex = rand 
     }
 }
 
@@ -229,6 +237,11 @@ public:
 
 int main() {
     cout << MIN_NR + MIN_LS + MAX_NR + MAX_LS;  // dummy statement to avoid compiler warning
+srand(time(0)); // Seed for random number generator
+
+DoublyLinkedList Line;
+loadCustomerNames('names.txt');
+
 
     
     return 0;
