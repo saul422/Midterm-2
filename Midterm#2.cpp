@@ -1,7 +1,31 @@
 #include <iostream>
+#include <fstream>
+#include <vector>
+#include <cstdlib>
+#include <ctime>
 using namespace std;
 
-const int MIN_NR = 10, MAX_NR = 99, MIN_LS = 5, MAX_LS = 20;
+//define probabilities
+const int HELP_PROB = 40;
+const int NEW_CUST_PROB = 60;
+const int LEAVE_END_PROB = 20;
+const int LEAVE_ANY_PROB = 10;
+const int VIP_PROB = 10;
+
+
+//customer name vectors
+vector<string> customerNames;
+
+
+//Function to read from file
+void loadCustomerNames (const int string &filename)
+{
+    ifstream file(filename);
+    string name;
+    while (getline(file,name))
+    {customerNames.push_back(name);
+    }
+}
 
 class DoublyLinkedList {
 private:
